@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Personal Recipe Cards</title>
+ <style>
+ body { font-family: Arial, sans-serif; max-width: 1000px; margin: 20px auto; padding: 0 12px; }
+ form { display: grid; gap: 8px; margin-bottom: 20px; }
+ input, textarea, select, button { padding: 8px; font-size: 14px; }
+ table { width: 100%; border-collapse: collapse; }
+ th, td { border: 1px solid #ccc; padding: 6px; text-align: left; vertical-align: top; }
+ th { background: #f0f0f0; }
+ .wrap { overflow-x: auto; }
+ </style>
+</head>
+<body>
+ <h1>Personal Recipe Cards</h1>
+ <form id="recipeForm">
+ <input type="hidden" id="recipeId">
+ <input id="title" placeholder="Title *" required>
+ <textarea id="ingredients" placeholder="Ingredients"></textarea>
+ <textarea id="instructions" placeholder="Instructions"></textarea>
+ <input id="cook_time_minutes" type="number" min="0" placeholder="Cook time (minutes)">
+ <select id="difficulty">
+ <option>Easy</option><option>Medium</option><option>Hard</option>
+ </select>
+ <input id="servings" type="number" min="1" placeholder="Servings">
+ <button type="submit" id="saveBtn">Add Recipe</button>
+ <button type="button" id="cancelBtn" style="display:none">Cancel Edit</button>
+ </form>
+ <div class="wrap">
+ <table>
+ <thead>
+ <tr><th>ID</th><th>Title</th><th>Ingredients</th><th>Instructions</th>
+ <th>Time</th><th>Difficulty</th><th>Servings</th><th>Actions</th></tr>
+ </thead>
+ <tbody id="tableBody"></tbody>
+ </table>
+ </div>
+ <script src="app.js"></script>
+</body>
+</html>
